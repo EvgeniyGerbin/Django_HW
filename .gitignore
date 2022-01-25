@@ -1,0 +1,12 @@
+# virtual environment
+/venv/
+/env/
+
+# python cache
+__pycahe__
+
+# local database
+pgdata/
+pgsql/
+*.sqlite3
+*.db
