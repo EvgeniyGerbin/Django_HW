@@ -33,9 +33,12 @@ def users_number(HttpRequest, user_id) -> HttpResponse:
     return HttpResponse(f'Usrer ID is : {user_id}!!!')
 
 
+def phone_number(request, *callback_args, **callback_kwargs):
+    return HttpResponse("right_phone_number")
+
+
 def regex(HttpRequest) -> HttpResponse:
     return HttpResponse("My regex!!")
 
 
-def phone_number(request, *callback_args, **callback_kwargs):
-    return HttpResponse("right_phone_number")
+
