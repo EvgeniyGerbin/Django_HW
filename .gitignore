@@ -1,7 +1,6 @@
 # virtual environment
 /venv/
 /env/
-.idea
 # python cache
 __pycahe__
 
