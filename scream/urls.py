@@ -1,4 +1,4 @@
-import regex as regex
+
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path, include, re_path
@@ -15,6 +15,5 @@ urlpatterns = [
     path('users/<int:user_id>/', users_number),
     re_path('(0(50|63|95|96)([0-9]{7}))', phone_number),
     re_path('[a-f1-9]{4}-\w{6}', regex),
-
-
+    path('admin/', admin.site.urls)
 ]
