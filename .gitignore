@@ -2,10 +2,12 @@
 /venv/
 /env/
 # python cache
-__pycahe__
+__pycache__
 
 # local database
 pgdata/
 pgsql/
 *.sqlite3
 *.db
+
+Brewfile
