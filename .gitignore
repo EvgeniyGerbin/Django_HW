@@ -11,3 +11,18 @@ pgsql/
 *.db
 
 Brewfile
+pycache
+.idea
+*.pyc
+vscode
+/local/*
+/locale/*
+cache
+/media/*
+env
+venv
+celerybeat-schedule
+VENV/
+ENV/
+/temp/
+/tmp/
