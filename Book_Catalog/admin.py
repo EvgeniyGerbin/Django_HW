@@ -10,3 +10,6 @@ class AuthorAdmin(admin.ModelAdmin):
 class BookAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(Reader)
+class ReaderAdmin(admin.ModelAdmin):
+    pass

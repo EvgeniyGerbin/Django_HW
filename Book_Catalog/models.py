@@ -1,5 +1,7 @@
 from django.db import models
 
+import myapp.models
+
 
 class Author(models.Model):
     first_name = models.CharField('Name', max_length=32)
@@ -16,6 +18,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField('Book Title', max_length=32)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='books', verbose_name='Author')
+    sub = models.ManyToManyField(Author, related_name='Subs', verbose_name='Sub Authors', )
 
     class Meta:
         verbose_name = "Book"
@@ -23,6 +26,15 @@ class Book(models.Model):
 
     def __str__(self):
         return f'{self.title} by {self.author}'
+
+
+class Reader(models.Model):
+    user = models.ForeignKey(myapp.models.Article, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book,on_delete=models.CASCADE, related_name='reader')
+    is_own = models.BooleanField('Book taken', default=True)
+
+    def __str__(self):
+        return f'{self.user} own {self.book}'
 
 
 
