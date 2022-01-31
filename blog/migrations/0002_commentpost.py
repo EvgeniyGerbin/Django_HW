@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('Blog', '0001_initial'),
+        ('blog', '0001_initial'),
     ]
 
     operations = [
@@ -16,9 +16,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('comment', models.TextField(blank=True, max_length=150, null=True)),
-                ('comment_to_comment', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='Blog.commentpost')),
-                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.post')),
-                ('user_comment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.bloger')),
+                ('comment_to_comment', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='blog.commentpost')),
+                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.post')),
+                ('user_comment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.bloger')),
             ],
         ),
     ]
