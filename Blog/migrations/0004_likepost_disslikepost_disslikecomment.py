@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0003_likecomment'),
+        ('Blog', '0003_likecomment'),
     ]
 
     operations = [
@@ -15,24 +15,24 @@ class Migration(migrations.Migration):
             name='LikePost',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('like_post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.post')),
-                ('user_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.bloger')),
+                ('like_post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.post')),
+                ('user_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.bloger')),
             ],
         ),
         migrations.CreateModel(
             name='DisslikePost',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('disslike_post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.post')),
-                ('user_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.bloger')),
+                ('disslike_post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.post')),
+                ('user_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.bloger')),
             ],
         ),
         migrations.CreateModel(
             name='DisslikeComment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('disslikecomment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.commentpost')),
-                ('user_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.bloger')),
+                ('disslikecomment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.commentpost')),
+                ('user_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.bloger')),
             ],
         ),
     ]

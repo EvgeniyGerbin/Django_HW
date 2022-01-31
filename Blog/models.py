@@ -21,7 +21,7 @@ class CommentPost(models.Model):
     user_comment = models.ForeignKey(Bloger, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     comment = models.TextField(max_length=150, null=True, blank=True)
-    comment_to_comment = models.ForeignKey('blog.CommentPost', null=True, blank=True, on_delete=models.DO_NOTHING)
+    comment_to_comment = models.ForeignKey('Blog.CommentPost', null=True, blank=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return '{} commented {}'.format(self.user_comment, self.post)
@@ -40,7 +40,7 @@ class DisslikeComment(models.Model):
     disslikecomment = models.ForeignKey(CommentPost, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '{} dissliked comment {}'.format(self.user_name, self.disslikecomment)
+        return '{} dissliked comment -> {}'.format(self.user_name, self.disslikecomment)
 
 
 class LikePost(models.Model):

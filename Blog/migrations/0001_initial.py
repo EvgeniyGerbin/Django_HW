@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=100)),
                 ('text', models.CharField(blank=True, max_length=1000, null=True)),
-                ('user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='blog.bloger')),
+                ('user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='Blog.bloger')),
             ],
         ),
     ]

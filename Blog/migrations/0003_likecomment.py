@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_commentpost'),
+        ('Blog', '0002_commentpost'),
     ]
 
     operations = [
@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
             name='LikeComment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('like_comment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.commentpost')),
-                ('user_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.bloger')),
+                ('like_comment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.commentpost')),
+                ('user_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.bloger')),
             ],
         ),
     ]
