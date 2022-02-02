@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+<div style="padding: 20px; background-color: LightPink "> Hello my name is Yevgeniy</div>
+<a href="{% url 'first' %}"> What day is today? </a>
+{% endblock %}
+</body>
+</html>

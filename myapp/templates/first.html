@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding: 20px; background-color: LightPink ">
+Today is {{ now|date:"D d M Y" }} {{ value|time:"H:i" }}
+</div>
+<a href="{% url 'index' %}">My name</a>
+{% endblock %}
+</body>
+</html>
