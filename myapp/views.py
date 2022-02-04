@@ -2,8 +2,11 @@ from django.http import HttpResponse
 
 
 # Create your views here.
-def main(HttpRequest) -> HttpResponse:
-    return HttpResponse("Hello BANDITOZ!!!")
+from django.shortcuts import render
+
+
+def main(request) -> HttpResponse:
+    return render(request, 'main_page.html', {})
 
 
 def acricles(HttpRequest) -> HttpResponse:
