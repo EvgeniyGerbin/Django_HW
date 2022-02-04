@@ -14,7 +14,7 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(CommentPost)
 class CommentPostAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['user_comment', 'created_at', 'updated_at']
 
 
 @admin.register(LikeComment)
