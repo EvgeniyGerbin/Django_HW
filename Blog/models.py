@@ -1,3 +1,6 @@
+from datetime import timezone, timedelta, datetime
+from django.utils import timezone
+
 from django.db import models
 
 
@@ -10,7 +13,7 @@ class Bloger(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    text = models.CharField(max_length=1000, blank=True, null=True)
+    text = models.TextField(max_length=1000, blank=True, null=True)
     user = models.ForeignKey(Bloger, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
@@ -22,6 +25,14 @@ class CommentPost(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     comment = models.TextField(max_length=150, null=True, blank=True)
     comment_to_comment = models.ForeignKey('Blog.CommentPost', null=True, blank=True, on_delete=models.DO_NOTHING)
+    created_at = models.DateField(default=datetime.now)
+    updated_at = models.DateField(default=datetime.now)
+
+
+    def save(self, *args, **kwargs):
+        if self.pk is not None:
+            self.updated_at = datetime.now() - timedelta(days=365)
+        super(CommentPost, self).save(*args, **kwargs)
 
     def __str__(self):
         return '{} commented {}'.format(self.user_comment, self.post)
