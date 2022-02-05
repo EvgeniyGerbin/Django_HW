@@ -5,15 +5,16 @@ from django.urls import path, include, re_path
 from myapp.views import *
 
 urlpatterns = [
-    path('', main),
-    path('acricles/', acricles),
+    path('', index, name='index'),
+    path('', include('myapp.urls')),
     path('acricles/archive/', acricles_archive),
     path('users/', users),
-    path('article/<int:article_id>/', article_number),
+    path('article/<int:article_id>/', article_number, name='article_number'),
     path('article/<int:article_id>/archive/', article_number),
-    path('article/<int:article_id>/<slug:slug_text>/', article_number_someText),
+    path('article/<int:article_id>/<slug:slug_text>/', article_number_someText, name='article_text'),
     path('users/<int:user_id>/', users_number),
+    re_path('(0(50|63|95|96)([0-9]{7}))', phone_number),
     re_path('[a-f1-9]{4}-\w{6}', regex),
-    re_path('user/(0(50|63|95|96)([0-9]{7}))', phone_number),
+
 
 ]
