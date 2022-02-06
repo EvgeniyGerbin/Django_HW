@@ -2,8 +2,11 @@ from django.http import HttpResponse
 
 
 # Create your views here.
-def main(HttpRequest) -> HttpResponse:
-    return HttpResponse("Hello BANDITOZ!!!")
+from django.shortcuts import render
+
+
+def main(request) -> HttpResponse:
+    return render(request, 'main_page.html', {})
 
 
 def acricles(HttpRequest) -> HttpResponse:
@@ -33,9 +36,12 @@ def users_number(HttpRequest, user_id) -> HttpResponse:
     return HttpResponse(f'Usrer ID is : {user_id}!!!')
 
 
+def phone_number(request, *callback_args, **callback_kwargs):
+    return HttpResponse("right_phone_number")
+
+
 def regex(HttpRequest) -> HttpResponse:
     return HttpResponse("My regex!!")
 
 
-def phone_number(request, *callback_args, **callback_kwargs):
-    return HttpResponse("right_phone_number")
+

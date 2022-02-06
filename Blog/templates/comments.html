@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+</head>
+<body>
+
+<div>
+<ul>
+    {% for com in objects%}
+        <li> {{com.comment}}  ------ date: {{com.updated_at}} </li>
+    {%endfor%}
+
+</ul>
+</div>
+
+</body>
+</html>
